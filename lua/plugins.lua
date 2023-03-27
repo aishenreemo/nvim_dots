@@ -13,7 +13,6 @@ local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
     use "wbthomason/packer.nvim"
-    use "nekonako/xresources-nvim"
     use "ThePrimeagen/harpoon"
     use "mbbill/undotree"
     use "gpanders/editorconfig.nvim"
@@ -53,6 +52,12 @@ return require("packer").startup(function(use)
             {"rafamadriz/friendly-snippets"}, -- Optional
         }
     }
+
+    if vim.loop.os_uname().sysname == "Windows_NT" then
+         use "folke/tokyonight.nvim"
+    else
+         use "nekonako/xresources-nvim"
+    end
 
     if packer_bootstrap then
         require("packer").sync()
