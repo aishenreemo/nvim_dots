@@ -29,7 +29,7 @@ return require("packer").startup(function(use)
         requires = { {"nvim-lua/plenary.nvim"} }
     }
 
-    use { "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } }
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
     use {
         "VonHeikemen/lsp-zero.nvim",
