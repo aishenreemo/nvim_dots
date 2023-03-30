@@ -17,6 +17,7 @@ return require("packer").startup(function(use)
     use "mbbill/undotree"
     use "gpanders/editorconfig.nvim"
     use "tmsvg/pear-tree"
+    use "andweeb/presence.nvim"
 
     use {
         "nvim-lualine/lualine.nvim",

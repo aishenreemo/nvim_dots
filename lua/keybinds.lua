@@ -34,3 +34,6 @@ vim.keymap.set("n", "<C-S-Right>", "<cmd>:vertical resize -2<CR>")
 
 -- lsp
 vim.keymap.set("n", "<leader>p", "<cmd>lua vim.diagnostic.open_float()<CR>")
+
+-- nvim rich presence
+vim.keymap.set("n", "<leader>r", "<cmd>lua package.loaded.presence:update()<CR>")
