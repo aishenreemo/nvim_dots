@@ -16,7 +16,6 @@ return require("packer").startup(function(use)
     use "ThePrimeagen/harpoon"
     use "mbbill/undotree"
     use "gpanders/editorconfig.nvim"
-    use "tmsvg/pear-tree"
     use "andweeb/presence.nvim"
 
     use {
