@@ -16,16 +16,6 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 -- rename a variable
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
--- window navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h")
-vim.keymap.set("n", "<C-j>", "<C-w>j")
-vim.keymap.set("n", "<C-k>", "<C-w>k")
-vim.keymap.set("n", "<C-l>", "<C-w>l")
-
--- window creation
-vim.keymap.set("n", "<leader>\"", "<C-w><C-s>")
-vim.keymap.set("n", "<leader>%", "<C-w><C-v>")
-
 -- resizing windows
 vim.keymap.set("n", "<C-S-Up>", "<cmd>:resize +2<CR>")
 vim.keymap.set("n", "<C-S-Down>", "<cmd>:resize -2<CR>")
