@@ -13,7 +13,6 @@ local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
     use "wbthomason/packer.nvim"
-    use "ThePrimeagen/harpoon"
     use "mbbill/undotree"
     use "gpanders/editorconfig.nvim"
     use "andweeb/presence.nvim"
@@ -30,7 +29,7 @@ return require("packer").startup(function(use)
     }
 
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
-
+    use { "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" }
     use {
         "VonHeikemen/lsp-zero.nvim",
         branch = "v1.x",
