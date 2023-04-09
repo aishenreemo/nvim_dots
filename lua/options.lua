@@ -4,6 +4,7 @@ local g = vim.g
 g.mapleader = " "
 g.encoding = "utf8"
 g.netrw_banner = 0
+vim.cmd[[let g:netrw_list_hide= netrw_gitignore#Hide()]]
 
 opt.confirm = true
 opt.laststatus = 3
