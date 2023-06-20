@@ -5,17 +5,7 @@ if ok then
 
     lsp.ensure_installed({
         "rust_analyzer",
-    })
-
-    -- Fix Undefined global "vim"
-    lsp.configure("lua-language-server", {
-        settings = {
-            Lua = {
-                diagnostics = {
-                    globals = { "vim" }
-                }
-            }
-        }
+        "lua_ls",
     })
 
     local cmp = require("cmp")
@@ -61,6 +51,29 @@ if ok then
         vim.keymap.set("n", "<leader>lm", function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set("i", "<C-i>", function() vim.lsp.buf.signature_help() end, opts)
     end)
+
+    require"lspconfig".lua_ls.setup {
+        settings = {
+            Lua = {
+                runtime = {
+                    -- Tell the language server which version of Lua you"re using (most likely LuaJIT in the case of Neovim)
+                    version = "LuaJIT",
+                },
+                diagnostics = {
+                    -- Get the language server to recognize the `vim` global
+                    globals = {"vim"},
+                },
+                workspace = {
+                    -- Make the server aware of Neovim runtime files
+                    library = vim.api.nvim_get_runtime_file("", true),
+                },
+                -- Do not send telemetry data containing a randomized but unique identifier
+                telemetry = {
+                    enable = false,
+                },
+            },
+        },
+    }
 
     lsp.setup()
 
