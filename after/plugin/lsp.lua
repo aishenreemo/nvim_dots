@@ -44,30 +44,26 @@ if ok then
         vim.keymap.set("n", "<leader>lh", function() vim.lsp.buf.hover() end, opts)
         vim.keymap.set("n", "<leader>lw", function() vim.lsp.buf.workspace_symbol() end, opts)
         vim.keymap.set("n", "<leader>lo", function() vim.diagnostic.open_float() end, opts)
-        vim.keymap.set("n", "<leader>ll", function() vim.diagnostic.goto_next() end, opts)
-        vim.keymap.set("n", "<leader>lh", function() vim.diagnostic.goto_prev() end, opts)
+        vim.keymap.set("n", "<leader>]", function() vim.diagnostic.goto_next() end, opts)
+        vim.keymap.set("n", "<leader>[", function() vim.diagnostic.goto_prev() end, opts)
         vim.keymap.set("n", "<leader>lc", function() vim.lsp.buf.code_action() end, opts)
         vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.references() end, opts)
         vim.keymap.set("n", "<leader>lm", function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set("i", "<C-i>", function() vim.lsp.buf.signature_help() end, opts)
     end)
 
-    require"lspconfig".lua_ls.setup {
+    require "lspconfig".lua_ls.setup {
         settings = {
             Lua = {
                 runtime = {
-                    -- Tell the language server which version of Lua you"re using (most likely LuaJIT in the case of Neovim)
                     version = "LuaJIT",
                 },
                 diagnostics = {
-                    -- Get the language server to recognize the `vim` global
-                    globals = {"vim"},
+                    globals = { "vim" },
                 },
                 workspace = {
-                    -- Make the server aware of Neovim runtime files
                     library = vim.api.nvim_get_runtime_file("", true),
                 },
-                -- Do not send telemetry data containing a randomized but unique identifier
                 telemetry = {
                     enable = false,
                 },

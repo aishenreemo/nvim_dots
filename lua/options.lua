@@ -3,8 +3,6 @@ local g = vim.g
 
 g.mapleader = " "
 g.encoding = "utf8"
-g.netrw_banner = 0
-vim.cmd[[let g:netrw_list_hide= netrw_gitignore#Hide()]]
 
 opt.confirm = true
 opt.laststatus = 3
@@ -46,7 +44,7 @@ opt.wrap = false
 
 opt.swapfile = false
 opt.backup = false
--- opt.undodir = os.getenv("HOME") .. "\.vim\undodir"
+opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undodir"
 opt.undofile = true
 
 opt.hlsearch = false
@@ -63,6 +61,8 @@ local default_plugins = {
    "gzip",
    "logipat",
    "matchit",
+   "netrw",
+   "netrwPlugin",
    "tar",
    "tarPlugin",
    "rrhelper",
@@ -74,5 +74,5 @@ local default_plugins = {
 }
 
 for _, plugin in pairs(default_plugins) do
-   g["loaded_" .. plugin] = 1
+   vim.g["loaded_" .. plugin] = 1
 end

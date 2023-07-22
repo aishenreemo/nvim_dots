@@ -13,6 +13,10 @@ local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
     use "wbthomason/packer.nvim"
+    use "nekonako/xresources-nvim"
+    use "nvim-lua/plenary.nvim"
+    use "nvim-treesitter/playground"
+    use "nvim-tree/nvim-web-devicons"
     use "mbbill/undotree"
     use "gpanders/editorconfig.nvim"
     use "andweeb/presence.nvim"
@@ -23,41 +27,42 @@ return require("packer").startup(function(use)
     }
 
     use {
-        "nvim-telescope/telescope.nvim", tag = "0.1.1",
-        -- or                            , branch = "0.1.x",
-        requires = { {"nvim-lua/plenary.nvim"} }
+        "nvim-telescope/telescope.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        tag = "0.1.2",
     }
 
-    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
-    use { "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" }
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        run = "<cmd>TSUpdate",
+    }
+
     use {
         "VonHeikemen/lsp-zero.nvim",
         branch = "v1.x",
         requires = {
             -- LSP Support
-            {"neovim/nvim-lspconfig"},             -- Required
-            {"williamboman/mason.nvim"},           -- Optional
-            {"williamboman/mason-lspconfig.nvim"}, -- Optional
+            {"neovim/nvim-lspconfig"},
+            {"williamboman/mason.nvim"},
+            {"williamboman/mason-lspconfig.nvim"},
 
             -- Autocompletion
-            {"hrsh7th/nvim-cmp"},         -- Required
-            {"hrsh7th/cmp-nvim-lsp"},     -- Required
-            {"hrsh7th/cmp-buffer"},       -- Optional
-            {"hrsh7th/cmp-path"},         -- Optional
-            {"saadparwaiz1/cmp_luasnip"}, -- Optional
-            {"hrsh7th/cmp-nvim-lua"},     -- Optional
+            {"hrsh7th/nvim-cmp"},
+            {"hrsh7th/cmp-nvim-lsp"},
+            {"hrsh7th/cmp-buffer"},
+            {"hrsh7th/cmp-path"},
+            {"saadparwaiz1/cmp_luasnip"},
+            {"hrsh7th/cmp-nvim-lua"},
 
             -- Snippets
-            {"L3MON4D3/LuaSnip"},             -- Required
-            {"rafamadriz/friendly-snippets"}, -- Optional
+            {"L3MON4D3/LuaSnip"},
         }
     }
 
-    if vim.loop.os_uname().sysname == "Windows_NT" then
-         use "folke/tokyonight.nvim"
-    else
-         use "nekonako/xresources-nvim"
-    end
+    use {
+        "nvim-tree/nvim-tree.lua",
+        requires = "nvim-tree/nvim-web-devicons",
+    }
 
     if packer_bootstrap then
         require("packer").sync()
