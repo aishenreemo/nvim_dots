@@ -44,7 +44,13 @@ opt.wrap = false
 
 opt.swapfile = false
 opt.backup = false
-opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undodir"
+
+if vim.loop.os_uname().sysname == "Windows_NT" then
+    opt.undodir = os.getenv("LOCALAPPDATA") .. "/nvim-data/undodir"
+else
+    opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undodir"
+end
+
 opt.undofile = true
 
 opt.hlsearch = false
@@ -55,24 +61,24 @@ opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
 local default_plugins = {
-   "2html_plugin",
-   "getscript",
-   "getscriptPlugin",
-   "gzip",
-   "logipat",
-   "matchit",
-   "netrw",
-   "netrwPlugin",
-   "tar",
-   "tarPlugin",
-   "rrhelper",
-   "spellfile_plugin",
-   "vimball",
-   "vimballPlugin",
-   "zip",
-   "zipPlugin",
+    "2html_plugin",
+    "getscript",
+    "getscriptPlugin",
+    "gzip",
+    "logipat",
+    "matchit",
+    "netrw",
+    "netrwPlugin",
+    "tar",
+    "tarPlugin",
+    "rrhelper",
+    "spellfile_plugin",
+    "vimball",
+    "vimballPlugin",
+    "zip",
+    "zipPlugin",
 }
 
 for _, plugin in pairs(default_plugins) do
-   vim.g["loaded_" .. plugin] = 1
+    vim.g["loaded_" .. plugin] = 1
 end
