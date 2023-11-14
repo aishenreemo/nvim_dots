@@ -20,6 +20,8 @@ return require("packer").startup(function(use)
     use "mbbill/undotree"
     use "gpanders/editorconfig.nvim"
     use "andweeb/presence.nvim"
+    use "l-zeuch/yagpdb.vim"
+    use "ThePrimeagen/vim-be-good"
 
     use {
         "nvim-lualine/lualine.nvim",

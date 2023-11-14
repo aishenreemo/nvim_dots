@@ -22,8 +22,23 @@ if ok then
     cmp_mappings["<Tab>"] = nil
     cmp_mappings["<S-Tab>"] = nil
 
-    lsp.setup_nvim_cmp({
-        mapping = cmp_mappings
+    cmp.setup({
+        snippet = {
+            expand = function(args)
+                require("luasnip").lsp_expand(args.body)
+            end,
+        },
+        mapping = cmp_mappings,
+        sources = cmp.config.sources({
+            { name = "nvim_lua" },
+            { name = "luasnip" },
+        }),
+    })
+
+    cmp.setup.filetype("yagpdbcc", {
+        sources = cmp.config.sources({
+            { name = "yagpdb-cc" },
+        })
     })
 
     lsp.set_preferences({
