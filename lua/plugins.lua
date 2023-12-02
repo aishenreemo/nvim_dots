@@ -22,6 +22,7 @@ return require("packer").startup(function(use)
     use "andweeb/presence.nvim"
     use "l-zeuch/yagpdb.vim"
     use "ThePrimeagen/vim-be-good"
+    use "lewis6991/gitsigns.nvim"
 
     use {
         "nvim-lualine/lualine.nvim",
