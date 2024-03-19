@@ -9,10 +9,13 @@ if ok then
     })
 
     local cmp = require("cmp")
+    local luasnip = require("luasnip")
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
     local cmp_mappings = lsp.defaults.cmp_mappings({
-        ["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
-        ["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
+        ["<A-h>"] = cmp.mapping(function() luasnip.jump(-1) end),
+        ["<A-l>"] = cmp.mapping(function() luasnip.expand_or_jump() end),
+        ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(cmp_select)),
+        ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(cmp_select)),
         ["<C-h>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
         ["<C-l>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
         ["<C-y>"] = cmp.mapping.confirm({ select = true }),
