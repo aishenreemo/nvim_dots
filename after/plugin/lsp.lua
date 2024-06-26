@@ -1,6 +1,8 @@
 local ok, lsp = pcall(require, "lsp-zero");
+local _, neodev = pcall(require, "neodev");
 
 if ok then
+    neodev.setup()
     lsp.preset("recommended")
 
     lsp.ensure_installed({
