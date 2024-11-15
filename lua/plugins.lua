@@ -14,8 +14,8 @@ local packer_bootstrap = ensure_packer()
 return require("packer").startup(function(use)
     use "wbthomason/packer.nvim"
     use "folke/neodev.nvim"
-    use "nekonako/xresources-nvim"
-    -- use "aishenreemo/kizu.nvim"
+    -- use "nekonako/xresources-nvim"
+    use "aishenreemo/kizu.nvim"
     use "vim-scripts/dbext.vim"
     use "nvim-lua/plenary.nvim"
     use "nvim-treesitter/playground"
