@@ -1,0 +1,93 @@
+# This is your rocks.nvim plugins declaration file.
+# Here is a small yet pretty detailed example on how to use it:
+#
+# [plugins]
+# nvim-treesitter = "semver_version"  # e.g. "1.0.0"
+
+# List of non-Neovim rocks.
+# This includes things like `toml` or other lua packages.
+[rocks]
+
+# List of Neovim plugins to install alongside their versions.
+# If the plugin name contains a dot then you must add quotes to the key name!
+[plugins]
+"rocks.nvim" = "2.44.0"
+"rocks-git.nvim" = "2.5.3"
+"fidget.nvim" = "1.6.0"
+nvim-lspconfig = "2.1.0"
+
+[plugins."kizu.nvim"]
+git = "aishenreemo/kizu.nvim"
+rev = "535ca10d9320b3acaa4cf7a0ff978114061168dd"
+
+[plugins."nvim-tree.lua"]
+git = "nvim-tree/nvim-tree.lua"
+rev = "v1.12"
+
+[plugins."telescope.nvim"]
+git = "nvim-telescope/telescope.nvim"
+rev = "0.1.8"
+
+[plugins."lualine.nvim"]
+git = "nvim-lualine/lualine.nvim"
+rev = "15884cee63a8c205334ab13ab1c891cd4d27101a"
+
+[plugins."mason.nvim"]
+git = "mason-org/mason.nvim"
+rev = "v2.0.0"
+
+[plugins."mason-lspconfig.nvim"]
+git = "mason-org/mason-lspconfig.nvim"
+rev = "v2.0.0"
+
+[plugins."lazydev.nvim"]
+git = "folke/lazydev.nvim"
+rev = "v1.9.0"
+
+[plugins.nvim-cmp]
+git = "hrsh7th/nvim-cmp"
+rev = "v0.0.2"
+
+[plugins.cmp-nvim-lsp]
+git = "hrsh7th/cmp-nvim-lsp"
+rev = "a8912b88ce488f411177fc8aed358b04dc246d7b"
+
+[plugins.cmp-buffer]
+git = "hrsh7th/cmp-buffer"
+rev = "b74fab3656eea9de20a9b8116afa3cfc4ec09657"
+
+[plugins.cmp-path]
+git = "hrsh7th/cmp-path"
+rev = "c6635aae33a50d6010bf1aa756ac2398a2d54c32"
+
+[plugins.cmp_luasnip]
+git = "saadparwaiz1/cmp_luasnip"
+rev = "98d9cb5c2c38532bd9bdb481067b20fea8f32e90"
+
+[plugins.cmp-nvim-lua]
+git = "hrsh7th/cmp-nvim-lua"
+rev = "f12408bdb54c39c23e67cab726264c10db33ada8"
+
+[plugins.luasnip]
+git = "l3mon4d3/luasnip"
+rev = "v2.3.0"
+
+[plugins.nvim-treesitter]
+git = "nvim-treesitter/nvim-treesitter"
+rev = "v0.9.3"
+
+[plugins."which-key.nvim"]
+git = "folke/which-key.nvim"
+rev = "v3.17.0"
+
+[plugins.cmp-cmdline]
+git = "hrsh7th/cmp-cmdline"
+rev = "d250c63aa13ead745e3a40f61fdd3470efde3923"
+
+[plugins."gitsigns.nvim"]
+git = "lewis6991/gitsigns.nvim"
+rev = "v1.0.2"
+
+[plugins."editorconfig.nvim"]
+git = "gpanders/editorconfig.nvim"
+rev = "v1.4.0"
